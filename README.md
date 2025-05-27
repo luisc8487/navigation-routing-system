@@ -80,7 +80,7 @@ The main goal of this project is to create a reusable `<Button />` component tha
    // ...other imports and ReactDOM.render/App code...
    ```
 
-   7. **Start the development server:**
+7. **Start the development server:**
 
    ```
    npm start
