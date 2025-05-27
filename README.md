@@ -23,7 +23,7 @@ The main goal of this project is to create a reusable `<Button />` component tha
 1. **Clone the repository:**
 
    ```
-   git clone <your-repo-url>
+   git clone git@github.com:luisc8487/navigation-routing-system.git
    cd react-comp
    ```
 
@@ -71,7 +71,17 @@ The main goal of this project is to create a reusable `<Button />` component tha
    @tailwind utilities;
    ```
 
-6. **Start the development server:**
+6. **Import your CSS in your entry file:**
+   Make sure to import your `index.css` file in your main entry file (usually `src/index.jsx` or `src/index.js`) so that Tailwind's styles are applied throughout your app:
+
+   ```js
+   // src/index.jsx
+   import "./index.css";
+   // ...other imports and ReactDOM.render/App code...
+   ```
+
+   7. **Start the development server:**
+
    ```
    npm start
    ```
