@@ -153,6 +153,57 @@ function Button({
 }
 ```
 
+## Handling Special `className` Cases with the Spread Operator
+
+The `Button` component is designed to be highly flexible. One important feature is the ability to pass a custom `className` prop to the button, allowing you to add extra Tailwind or custom classes from the parent component. This is achieved using the **spread operator** (`...rest`) in the `Button.jsx` file.
+
+### How it Works
+
+When you use the spread operator in the component props, like this:
+
+```jsx
+function Button({children, ...rest}) {
+  // ...existing code...
+  return (
+    <button {...rest} className={classes}>
+      {children}
+    </button>
+  );
+}
+```
+
+It collects all additional props (such as `className`, `onClick`, etc.) and passes them directly to the `<button>` element. This means you can add custom classes or event handlers when using the `Button` component.
+
+### Example from `App.jsx`
+
+Here’s how you can add a custom margin to a button using the `className` prop:
+
+```jsx
+<Button success rounded outline className="mb-5" onClick={handleClick}>
+  <GoBell />
+  Click me!
+</Button>
+```
+
+- `className="mb-5"` adds a bottom margin to the button.
+- `onClick={handleClick}` attaches a click event handler.
+- All these props are passed to the `<button>` element inside the `Button` component thanks to the spread operator.
+
+### How `className` is Merged
+
+Inside `Button.jsx`, the `className` from the parent is merged with the component’s own classes using `classnames` and `tailwind-merge`:
+
+```jsx
+const classes = twMerge(
+  className(rest.className, "flex items-center px-3 py-1.5 border", {
+    // ...conditional Tailwind classes...
+  })
+);
+```
+
+- `rest.className` ensures any custom classes from the parent are included.
+- `twMerge` resolves any conflicting Tailwind classes, so your custom styles and the component’s styles work together seamlessly.
+
 ---
 
 ## Using React Icons
@@ -175,6 +226,7 @@ import {FaBeer} from "react-icons/fa";
 - **Tailwind CSS** provides utility classes for styling.
 - **classnames** lets you conditionally apply classes based on props.
 - **tailwind-merge** ensures that conflicting Tailwind classes are resolved correctly.
+- The spread operator allows the `Button` component to accept and forward any extra props, including `className`, making it easy to customize buttons from the parent component. The combination of `classnames` and `tailwind-merge` ensures all classes are merged and applied correctly.
 - **react-icons** makes it easy to add SVG icons to your buttons.
 - The `Button` component is highly reusable and customizable via props.
 
