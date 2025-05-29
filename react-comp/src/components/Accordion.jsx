@@ -14,23 +14,26 @@ function Accordion({items}) {
     const isExpanded = index === expandedIndex;
 
     const icon = (
-      <span>
+      <span className="text-3xl">
         {isExpanded ? <MdKeyboardArrowDown /> : <MdKeyboardArrowLeft />}
       </span>
     );
 
     return (
       <div key={item.id}>
-        <div onClick={() => handleClick(index)}>
-          {icon}
+        <div
+          className="flex justify-between p-3 bg-gray-50 border-b item-center cursor-pointer"
+          onClick={() => handleClick(index)}
+        >
           {item.label}
+          {icon}
         </div>
-        <div>{isExpanded && <div>{item.content}</div>}</div>
+        {isExpanded && <div className="border-p p-5">{item.content}</div>}
       </div>
     );
   });
 
-  return <div>{renderedItems}</div>;
+  return <div className="border-x border-t rounded">{renderedItems}</div>;
 }
 
 export default Accordion;
