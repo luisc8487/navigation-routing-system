@@ -1,9 +1,20 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {IoIosArrowDown} from "react-icons/io";
 import Panel from "./Panel";
 
 function Dropdown({options, value, onChange}) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = (event) => {
+      console.log(event.target);
+    };
+    document.addEventListener("click", handler, true);
+
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  }, []);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
