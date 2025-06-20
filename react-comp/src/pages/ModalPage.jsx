@@ -15,7 +15,9 @@ function ModalPage() {
 
   const actionBar = (
     <div>
-      <Button primary onClick={handleClose}>I Accept</Button>
+      <Button primary onClick={handleClose}>
+        I Accept
+      </Button>
     </div>
   );
   const modal = (
@@ -30,6 +32,110 @@ function ModalPage() {
         Open Modal
       </Button>
       {showModal && modal}
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis
+        nunc sit amet est vehicula auctor nec sit amet urna. Vestibulum id
+        facilisis urna, eu fermentum turpis. Mauris ut risus sem. Quisque risus
+        orci, facilisis at facilisis ac, fermentum sit amet quam. Donec sagittis
+        ipsum at egestas tincidunt. Maecenas efficitur sem non dui convallis
+        congue. Etiam congue eget orci congue ornare. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Cras ut mi scelerisque lorem sagittis tempor. Duis consequat, purus a
+        accumsan fermentum, nibh nibh congue justo, vitae tincidunt eros nunc
+        vel nunc. Donec eget orci id magna suscipit scelerisque non eget felis.
+        Curabitur non feugiat orci. In hac habitasse platea dictumst.
+      </p>
     </div>
   );
 }
