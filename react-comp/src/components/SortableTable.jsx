@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {RiArrowUpSLine, RiArrowDownSLine} from "react-icons/ri";
 import Table from "./Table";
 
 function SortableTable(props) {
@@ -27,9 +28,14 @@ function SortableTable(props) {
     return {
       ...column,
       header: () => (
-        <th onClick={() => handleClick(column.label)}>
-          {getIcons(column.label, sortBy, sortOrder)}
-          {column.label}
+        <th
+          className="cursor-pointer hover:bg-gray-100"
+          onClick={() => handleClick(column.label)}
+        >
+          <div className="flex items-center">
+            {getIcons(column.label, sortBy, sortOrder)}
+            {column.label}
+          </div>
         </th>
       ),
     };
@@ -67,15 +73,33 @@ function SortableTable(props) {
 
 function getIcons(label, sortBy, sortOrder) {
   if (label !== sortBy) {
-    return "Show both icons";
+    return (
+      <div>
+        <RiArrowUpSLine />
+        <RiArrowDownSLine />
+      </div>
+    );
   }
 
   if (sortOrder === null) {
-    return "Show both icons";
+    return (
+      <div>
+        <RiArrowUpSLine />
+        <RiArrowDownSLine />
+      </div>
+    );
   } else if (sortOrder === "asc") {
-    return "Show up icon";
+    return (
+      <div>
+        <RiArrowUpSLine />
+      </div>
+    );
   } else if (sortOrder === "desc") {
-    return "Show down icon";
+    return (
+      <div>
+        <RiArrowDownSLine />
+      </div>
+    );
   }
 }
 
