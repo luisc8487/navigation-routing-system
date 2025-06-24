@@ -15,6 +15,7 @@ The main goal of this project is to create a reusable `<Button />` component tha
 - **tailwind-merge** to resolve conflicting Tailwind classes (e.g., `text-white` vs. `text-blue-500`).
 - **react-icons** for easily adding SVG icons to buttons.
 - **Reusable Button component** with multiple style variations via props.
+- **Fragments** let you group multiple elements without adding extra nodes to the DOM.
 
 ---
 
@@ -206,6 +207,30 @@ const classes = twMerge(
 
 ---
 
+## Why use a Fragment?
+
+- **No extra DOM nodes**: Unlike a `<div>`, a Fragment doesn't render anything in the DOM. This keeps your HTML clean.
+- **Return multiple elements**: In React, a component must return a single parent element. Fragments let you return multiple elements side by side.
+
+### Example:
+
+```jsx
+import {Fragment} from "react";
+
+function MyComponent() {
+  return (
+    <Fragment>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+    </Fragment>
+  );
+}
+```
+
+This is especially useful in tables, where adding extra `<div>`s would break the table structure. Using a Fragment allows you to return multiple `<td>` elements from a component without wrapping them in an invalid element.
+
+---
+
 ## Using React Icons
 
 You can easily add icons to your buttons using the `react-icons` library:
@@ -229,6 +254,7 @@ import {FaBeer} from "react-icons/fa";
 - The spread operator allows the `Button` component to accept and forward any extra props, including `className`, making it easy to customize buttons from the parent component. The combination of `classnames` and `tailwind-merge` ensures all classes are merged and applied correctly.
 - **react-icons** makes it easy to add SVG icons to your buttons.
 - The `Button` component is highly reusable and customizable via props.
+- **`Fragment`** in **`Table.jsx`** to the group elements (like `<tr>` or `<td>`) without introducing unnecessary DOM nodes, which is important for valid table markup.
 
 ---
 
