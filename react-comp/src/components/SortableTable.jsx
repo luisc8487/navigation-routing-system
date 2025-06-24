@@ -28,7 +28,8 @@ function SortableTable(props) {
       ...column,
       header: () => (
         <th onClick={() => handleClick(column.label)}>
-          {column.label} IS SORTABLE
+          {getIcons(column.label, sortBy, sortOrder)}
+          {column.label}
         </th>
       ),
     };
@@ -36,7 +37,7 @@ function SortableTable(props) {
 
   // Only soet data if sortOrder && sortBy are not null
   // Make a copy of the 'data' prop
-  // Find the correct sortValue Functiion and use it for
+  // Find the correct sortValue Functiion and use it for sorting
 
   let sortedData = data;
   if (sortOrder && sortBy) {
@@ -63,4 +64,19 @@ function SortableTable(props) {
     </div>
   );
 }
+
+function getIcons(label, sortBy, sortOrder) {
+  if (label !== sortBy) {
+    return "Show both icons";
+  }
+
+  if (sortOrder === null) {
+    return "Show both icons";
+  } else if (sortOrder === "asc") {
+    return "Show up icon";
+  } else if (sortOrder === "desc") {
+    return "Show down icon";
+  }
+}
+
 export default SortableTable;
