@@ -16,6 +16,7 @@ The main goal of this project is to create a reusable `<Button />` component tha
 - **react-icons** for easily adding SVG icons to buttons.
 - **Reusable Button component** with multiple style variations via props.
 - **Fragments** let you group multiple elements without adding extra nodes to the DOM.
+- **`createPortal`** render the modal’s HTML into a dedicated DOM node ensuring it appears above everything else and avoids CSS stacking/context issues.
 
 ---
 
@@ -204,6 +205,24 @@ const classes = twMerge(
 
 - `rest.className` ensures any custom classes from the parent are included.
 - `twMerge` resolves any conflicting Tailwind classes, so your custom styles and the component’s styles work together seamlessly.
+
+---
+
+## Why do we use createPortal
+
+To render the modal's HTML into a dedicated DOM nodes (like a `<div class="modal-container"></div>`) at the root of the HTML), ensuring its appears above everything else and avoids CSS stacking/context issues.
+
+### Example from your code
+
+```jsx
+return ReactDOM.createPortal(
+  <div>...</div>
+  document.querySelector(".modal-container")
+  );
+```
+
+- The modal's JSX is rendered into the DOM node with the class `modal-container`, not inside the usual React root.
+- This keeps your modal visually and structurally separate from the rest of your app, which is important for accessibility and layout.
 
 ---
 
