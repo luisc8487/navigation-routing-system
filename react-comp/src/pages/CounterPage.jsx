@@ -20,6 +20,8 @@ function CounterPage({initalCount}) {
     setValueToAdd(value);
   };
 
+  // Add Secction here
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
