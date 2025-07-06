@@ -3,10 +3,28 @@ import Button from "../components/Button";
 import Panel from "../components/Panel";
 
 const reducer = (state, action) => {
-  return {
-    ...state,
-    count: state.count + 1,
-  };
+  if (action.type === "increment") {
+    return {
+      ...state,
+      count: state.count + 1,
+    };
+  }
+
+  if (action.type === "decrement") {
+    return {
+      ...state,
+      count: state.count - 1,
+    };
+  }
+
+  if (action.type === "change-value-to-add") {
+    return {
+      ...state,
+      valueToAdd: action.payload,
+    };
+  }
+
+  return state;
 };
 
 function CounterPage({initalCount}) {
@@ -20,17 +38,22 @@ function CounterPage({initalCount}) {
   console.log(state);
 
   const increment = () => {
-    dispatch();
+    dispatch({
+      type: "increment",
+    });
+    // setCount(count + 1)
   };
 
   const decrement = () => {
-    // setCount(count - 1);
+    dispatch({type: "decrement"});
+    // setCount(count - 1)
   };
 
   const handleChange = (e) => {
     const value = parseInt(e.target.value) || 0;
 
-    // setValueToAdd(value);
+    dispatch({type: "change-value-to-add", payload: value});
+    // setToAddValue(value)
   };
 
   // Add Secction here
