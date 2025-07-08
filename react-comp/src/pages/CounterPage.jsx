@@ -2,39 +2,33 @@ import {useReducer} from "react";
 import Button from "../components/Button";
 import Panel from "../components/Panel";
 
-const INCREMENT_COUNT = 'increment';
-const DECREMENT_COUNT = 'decrement';
-const SET_VALUE_TO_ADD = 'set_value_to_add';
+const INCREMENT_COUNT = "increment";
+const DECREMENT_COUNT = "decrement";
+const SET_VALUE_TO_ADD = "set_value_to_add";
 
 const reducer = (state, action) => {
-  if (action.type === INCREMENT_COUNT) {
-    return {
-      ...state,
-      count: state.count + 1,
-    };
+  switch (action.type) {
+    case INCREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+    case DECREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count - 1,
+      };
+    case SET_VALUE_TO_ADD:
+      return {
+        ...state,
+        valueToAdd: action.payload,
+      };
+    default:
+      return state;
   }
-
-  if (action.type === DECREMENT_COUNT) {
-    return {
-      ...state,
-      count: state.count - 1,
-    };
-  }
-
-  if (action.type === SET_VALUE_TO_ADD) {
-    return {
-      ...state,
-      valueToAdd: action.payload,
-    };
-  }
-
-  return state;
 };
 
 function CounterPage({initalCount}) {
-  // const [count, setCount] = useState(initalCount);
-  // const [valueToAdd, setValueToAdd] = useState(0);
-
   const [state, dispatch] = useReducer(reducer, {
     count: initalCount,
     valueToAdd: 0,
@@ -45,19 +39,16 @@ function CounterPage({initalCount}) {
     dispatch({
       type: "increment",
     });
-    // setCount(count + 1)
   };
 
   const decrement = () => {
     dispatch({type: "decrement"});
-    // setCount(count - 1)
   };
 
   const handleChange = (e) => {
     const value = parseInt(e.target.value) || 0;
 
     dispatch({type: SET_VALUE_TO_ADD, payload: value});
-    // setToAddValue(value)
   };
 
   // Add Secction here
